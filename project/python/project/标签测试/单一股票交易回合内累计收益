@@ -1,0 +1,28 @@
+import pymysql
+from functools import reduce
+#验证账号
+fund_account="100013663"
+#连接数据库
+db_louis=pymysql.connect(host='10.20.18.174', port=3306, user='root', passwd='Hundsun123',db='louis')
+connection_louis=db_louis.cursor()
+
+#查询交易回合收益表sql
+stock_hold_incomesql="select * from stock_hold_cycle_income where fund_account="+fund_account
+connection_louis.execute(stock_hold_incomesql)
+stock_hold_incomelist=connection_louis.fetchall()
+
+for x in stock_hold_incomelist:
+    # 查询数据结果
+    stock_hold_ratesql = "select * from stock_hold_cycle_income_rate where fund_account=" + fund_account+" and stock_code="+x[1]+" and end_date="+str(x[4])
+    connection_louis.execute(stock_hold_ratesql)
+    stock_hold_ratelist = connection_louis.fetchall()
+    result_rate=stock_hold_ratelist[0][2]
+    stock_rate=0
+    if x[3] == 0:
+        stock_rate=0
+    else:
+        stock_rate=round(x[2]/x[3], 4)
+    if result_rate == stock_rate:
+        print("验证通过",result_rate)
+    else:
+        print("验证不通过，计算结果为",stock_rate,"标签结果为",result_rate,"stocke_code为",x[1])

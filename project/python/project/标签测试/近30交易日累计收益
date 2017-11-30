@@ -1,0 +1,33 @@
+import pymysql
+from functools import reduce
+from project.util.dateUtil import dateUtil
+#验证的账号
+fund_account="570000528"
+#数据库连接信息
+db_louis=pymysql.connect(host='10.20.18.174', port=3306, user='root', passwd='Hundsun123',db='louis')
+connection_louis=db_louis.cursor()
+db_huaan=pymysql.connect(host='10.20.18.174', port=3306, user='root', passwd='Hundsun123',db='huaan')
+connection_huaan=db_huaan.cursor()
+
+#查询结果数据
+result_profitsql="select * from tradeday_income_balance WHERE  fund_account="+fund_account
+connection_louis.execute(result_profitsql)
+result_profitlist=connection_louis.fetchall()
+for x in result_profitlist:
+    init_date=x[1]
+    calculate_result = 0
+    get_thirtdaylist=dateUtil().getLastNDaysList(init_date,29)
+    for a in get_thirtdaylist:
+        #查询原始数据
+        assetsql="select income_balance from asset where fund_account = "+fund_account+" and init_date="+a
+        connection_louis.execute(assetsql)
+        assetlist = connection_louis.fetchall()
+        if len(assetlist) == 0:
+            calculate_result = calculate_result
+        else:
+            calculate_result=calculate_result+assetlist[0][0]
+    #验证结果
+    if calculate_result == x[2]:
+        print("验证通过",calculate_result)
+    else:
+        print("验证不通过，日期为",init_date,"计算结果为",calculate_result,"标签结果为",x[2])
