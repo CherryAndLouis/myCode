@@ -18,7 +18,7 @@ public class ObjectSeriaDemo1 {
 		Student stu = (Student)ois.readObject();
 		System.out.println(stu);
 		ois.close();
-		
+	
 	}
 	
 
