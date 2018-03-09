@@ -8,7 +8,7 @@ connection_louis=db_louis.cursor()
 
 #查询交易回合收益表sql
 stock_hold_incomesql="select * from stock_hold_cycle_income where fund_account="+fund_account
-connection_louis.execute(stock_hold_incomesql)
+    connection_louis.execute(stock_hold_incomesql)
 stock_hold_incomelist=connection_louis.fetchall()
 
 for x in stock_hold_incomelist:
