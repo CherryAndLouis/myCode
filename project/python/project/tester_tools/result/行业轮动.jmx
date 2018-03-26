@@ -1,0 +1,965 @@
+<jmeterTestPlan jmeter="3.2.20180122" properties="3.2" version="1.2">
+	
+  
+	<hashTree>
+		
+    
+		<TestPlan enabled="true" guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划">
+			
+      
+			<stringProp name="TestPlan.comments"/>
+			
+      
+			<boolProp name="TestPlan.functional_mode">false</boolProp>
+			
+      
+			<boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+			
+      
+			<elementProp elementType="Arguments" enabled="true" guiclass="ArgumentsPanel" name="TestPlan.user_defined_variables" testclass="Arguments" testname="用户定义的变量">
+				
+        
+				<collectionProp name="Arguments.arguments"/>
+				
+      
+			</elementProp>
+			
+      
+			<stringProp name="TestPlan.user_define_classpath"/>
+			
+    
+		</TestPlan>
+		
+    
+		<hashTree>
+			
+      
+			<ThreadGroup enabled="true" guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="行业轮动--接口测试">
+				
+        
+				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+				
+        
+				<elementProp elementType="LoopController" enabled="true" guiclass="LoopControlPanel" name="ThreadGroup.main_controller" testclass="LoopController" testname="循环控制器">
+					
+          
+					<boolProp name="LoopController.continue_forever">false</boolProp>
+					
+          
+					<stringProp name="LoopController.loops">1</stringProp>
+					
+        
+				</elementProp>
+				
+        
+				<stringProp name="ThreadGroup.num_threads">1</stringProp>
+				
+        
+				<stringProp name="ThreadGroup.ramp_time">1</stringProp>
+				
+        
+				<longProp name="ThreadGroup.start_time">1517553285000</longProp>
+				
+        
+				<longProp name="ThreadGroup.end_time">1517553285000</longProp>
+				
+        
+				<boolProp name="ThreadGroup.scheduler">false</boolProp>
+				
+        
+				<stringProp name="ThreadGroup.duration"/>
+				
+        
+				<stringProp name="ThreadGroup.delay"/>
+				
+      
+			</ThreadGroup>
+			
+      
+			<hashTree>
+				
+        
+				<ConfigTestElement enabled="true" guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值">
+					
+          
+					<elementProp elementType="Arguments" enabled="true" guiclass="HTTPArgumentsPanel" name="HTTPsampler.Arguments" testclass="Arguments" testname="用户定义的变量">
+						
+            
+						<collectionProp name="Arguments.arguments"/>
+						
+          
+					</elementProp>
+					
+          
+					<stringProp name="HTTPSampler.domain">10.253.102.208</stringProp>
+					
+          
+					<stringProp name="HTTPSampler.port">9008</stringProp>
+					
+          
+					<stringProp name="HTTPSampler.protocol">http</stringProp>
+					
+          
+					<stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+					
+          
+					<stringProp name="HTTPSampler.path"/>
+					
+          
+					<stringProp name="HTTPSampler.concurrentPool">4</stringProp>
+					
+          
+					<stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+					
+          
+					<stringProp name="HTTPSampler.connect_timeout">10000</stringProp>
+					
+          
+					<stringProp name="HTTPSampler.response_timeout">10000</stringProp>
+					
+        
+				</ConfigTestElement>
+				
+        
+				<hashTree/>
+				
+        
+				<JDBCDataSource enabled="true" guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration">
+					
+          
+					<boolProp name="autocommit">true</boolProp>
+					
+          
+					<stringProp name="checkQuery">Select 1</stringProp>
+					
+          
+					<stringProp name="connectionAge">5000</stringProp>
+					
+          
+					<stringProp name="dataSource"/>
+					
+          
+					<stringProp name="dbUrl"/>
+					
+          
+					<stringProp name="driver"/>
+					
+          
+					<boolProp name="keepAlive">true</boolProp>
+					
+          
+					<stringProp name="password"/>
+					
+          
+					<stringProp name="poolMax">10</stringProp>
+					
+          
+					<stringProp name="timeout">10000</stringProp>
+					
+          
+					<stringProp name="transactionIsolation">DEFAULT</stringProp>
+					
+          
+					<stringProp name="trimInterval">60000</stringProp>
+					
+          
+					<stringProp name="username"/>
+					
+        
+				</JDBCDataSource>
+				
+        
+				<hashTree/>
+				
+        
+				<Arguments enabled="true" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+					<collectionProp name="Arguments.arguments"/>
+					<collectionProp name="Arguments.arguments">
+						
+    
+						
+
+						<elementProp elementType="Argument" name="para">
+							<stringProp name="Argument.name">error_no_0</stringProp>
+							<stringProp name="Argument.value">0</stringProp>
+							<stringProp name="Argument.metadata">=</stringProp>
+						</elementProp>
+						<elementProp elementType="Argument" name="para">
+							<stringProp name="Argument.name">user_token</stringProp>
+							<stringProp name="Argument.value">test420</stringProp>
+							<stringProp name="Argument.metadata">=</stringProp>
+						</elementProp>
+						<elementProp elementType="Argument" name="para">
+							<stringProp name="Argument.name">date</stringProp>
+							<stringProp name="Argument.value">20180301</stringProp>
+							<stringProp name="Argument.metadata">=</stringProp>
+						</elementProp>
+						<elementProp elementType="Argument" name="para">
+							<stringProp name="Argument.name">code</stringProp>
+							<stringProp name="Argument.value">test218</stringProp>
+							<stringProp name="Argument.metadata">=</stringProp>
+						</elementProp>
+					</collectionProp>
+				</Arguments>
+				
+        
+				<hashTree/>
+				
+        
+				<OnceOnlyController enabled="true" guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="行业轮动--业务逻辑测试"/>
+				
+        
+				<hashTree>
+					<GenericController enabled="true" guiclass="LogicControllerGui" testclass="GenericController" testname="get_current_wheel_movement--接口功能测试"/>
+					<hashTree>
+						<HTTPSamplerProxy enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_current_wheel_movement_当前轮动">
+							
+              
+							<boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+							
+              
+							<elementProp elementType="Arguments" name="HTTPsampler.Arguments">
+								
+                
+								<collectionProp name="Arguments.arguments">
+									
+                  
+									<elementProp elementType="HTTPArgument" name="">
+										
+                    
+										<boolProp name="HTTPArgument.always_encode">false</boolProp>
+										
+                    
+										<stringProp name="Argument.value">{user_token=${user_token},date=${date}}</stringProp>
+										
+                    
+										<stringProp name="Argument.metadata">=</stringProp>
+										
+                  
+									</elementProp>
+									
+                
+								</collectionProp>
+								
+              
+							</elementProp>
+							
+              
+							<stringProp name="HTTPSampler.domain"/>
+							
+              
+							<stringProp name="HTTPSampler.port"/>
+							
+              
+							<stringProp name="HTTPSampler.protocol"/>
+							
+              
+							<stringProp name="HTTPSampler.contentEncoding"/>
+							
+              
+							<stringProp name="HTTPSampler.path">/tools/get_current_wheel_movement</stringProp>
+							
+              
+							<stringProp name="HTTPSampler.method">POST</stringProp>
+							
+              
+							<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+							
+              
+							<stringProp name="HTTPSampler.embedded_url_re"/>
+							
+              
+							<stringProp name="HTTPSampler.connect_timeout"/>
+							
+              
+							<stringProp name="HTTPSampler.response_timeout"/>
+							
+        
+						</HTTPSamplerProxy>
+						<hashTree>
+							
+            
+							<ResponseAssertion enabled="true" guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+								
+                
+								<collectionProp name="Asserion.test_strings">
+									
+                    
+									<stringProp name="976370584">error_no=${error_no_0}</stringProp>
+									
+                
+								</collectionProp>
+								
+                
+								<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+								
+                
+								<boolProp name="Assertion.assume_success">false</boolProp>
+								
+                
+								<intProp name="Assertion.test_type">16</intProp>
+								
+            
+							</ResponseAssertion>
+							
+        
+						</hashTree>
+					</hashTree>
+					<GenericController enabled="true" guiclass="LogicControllerGui" testclass="GenericController" testname="get_flag_his--接口功能测试"/>
+					<hashTree>
+						<HTTPSamplerProxy enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_flag_his_获取买点卖点历史">
+							
+              
+							<boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+							
+              
+							<elementProp elementType="Arguments" name="HTTPsampler.Arguments">
+								
+                
+								<collectionProp name="Arguments.arguments">
+									
+                  
+									<elementProp elementType="HTTPArgument" name="">
+										
+                    
+										<boolProp name="HTTPArgument.always_encode">false</boolProp>
+										
+                    
+										<stringProp name="Argument.value">{user_token=${user_token},date=${date},code=${code}}</stringProp>
+										
+                    
+										<stringProp name="Argument.metadata">=</stringProp>
+										
+                  
+									</elementProp>
+									
+                
+								</collectionProp>
+								
+              
+							</elementProp>
+							
+              
+							<stringProp name="HTTPSampler.domain"/>
+							
+              
+							<stringProp name="HTTPSampler.port"/>
+							
+              
+							<stringProp name="HTTPSampler.protocol"/>
+							
+              
+							<stringProp name="HTTPSampler.contentEncoding"/>
+							
+              
+							<stringProp name="HTTPSampler.path">/tools/get_flag_his</stringProp>
+							
+              
+							<stringProp name="HTTPSampler.method">POST</stringProp>
+							
+              
+							<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+							
+              
+							<stringProp name="HTTPSampler.embedded_url_re"/>
+							
+              
+							<stringProp name="HTTPSampler.connect_timeout"/>
+							
+              
+							<stringProp name="HTTPSampler.response_timeout"/>
+							
+        
+						</HTTPSamplerProxy>
+						<hashTree>
+							
+            
+							<ResponseAssertion enabled="true" guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+								
+                
+								<collectionProp name="Asserion.test_strings">
+									
+                    
+									<stringProp name="976370584">error_no=${error_no_0}</stringProp>
+									
+                
+								</collectionProp>
+								
+                
+								<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+								
+                
+								<boolProp name="Assertion.assume_success">false</boolProp>
+								
+                
+								<intProp name="Assertion.test_type">16</intProp>
+								
+            
+							</ResponseAssertion>
+							
+        
+						</hashTree>
+					</hashTree>
+					<GenericController enabled="true" guiclass="LogicControllerGui" testclass="GenericController" testname="get_home_page--接口功能测试"/>
+					<hashTree>
+						<HTTPSamplerProxy enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_home_page_行业轮动首页">
+							
+              
+							<boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+							
+              
+							<elementProp elementType="Arguments" name="HTTPsampler.Arguments">
+								
+                
+								<collectionProp name="Arguments.arguments">
+									
+                  
+									<elementProp elementType="HTTPArgument" name="">
+										
+                    
+										<boolProp name="HTTPArgument.always_encode">false</boolProp>
+										
+                    
+										<stringProp name="Argument.value">{user_token=${user_token},date=${date}}</stringProp>
+										
+                    
+										<stringProp name="Argument.metadata">=</stringProp>
+										
+                  
+									</elementProp>
+									
+                
+								</collectionProp>
+								
+              
+							</elementProp>
+							
+              
+							<stringProp name="HTTPSampler.domain"/>
+							
+              
+							<stringProp name="HTTPSampler.port"/>
+							
+              
+							<stringProp name="HTTPSampler.protocol"/>
+							
+              
+							<stringProp name="HTTPSampler.contentEncoding"/>
+							
+              
+							<stringProp name="HTTPSampler.path">/tools/get_home_page</stringProp>
+							
+              
+							<stringProp name="HTTPSampler.method">POST</stringProp>
+							
+              
+							<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+							
+              
+							<stringProp name="HTTPSampler.embedded_url_re"/>
+							
+              
+							<stringProp name="HTTPSampler.connect_timeout"/>
+							
+              
+							<stringProp name="HTTPSampler.response_timeout"/>
+							
+        
+						</HTTPSamplerProxy>
+						<hashTree>
+							
+            
+							<ResponseAssertion enabled="true" guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+								
+                
+								<collectionProp name="Asserion.test_strings">
+									
+                    
+									<stringProp name="976370584">error_no=${error_no_0}</stringProp>
+									
+                
+								</collectionProp>
+								
+                
+								<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+								
+                
+								<boolProp name="Assertion.assume_success">false</boolProp>
+								
+                
+								<intProp name="Assertion.test_type">16</intProp>
+								
+            
+							</ResponseAssertion>
+							
+        
+						</hashTree>
+					</hashTree>
+					<GenericController enabled="true" guiclass="LogicControllerGui" testclass="GenericController" testname="get_industry_kline--接口功能测试"/>
+					<hashTree>
+						<HTTPSamplerProxy enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_industry_kline_获取行业K线">
+							
+              
+							<boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+							
+              
+							<elementProp elementType="Arguments" name="HTTPsampler.Arguments">
+								
+                
+								<collectionProp name="Arguments.arguments">
+									
+                  
+									<elementProp elementType="HTTPArgument" name="">
+										
+                    
+										<boolProp name="HTTPArgument.always_encode">false</boolProp>
+										
+                    
+										<stringProp name="Argument.value">{user_token=${user_token},date=${date},code=${code}}</stringProp>
+										
+                    
+										<stringProp name="Argument.metadata">=</stringProp>
+										
+                  
+									</elementProp>
+									
+                
+								</collectionProp>
+								
+              
+							</elementProp>
+							
+              
+							<stringProp name="HTTPSampler.domain"/>
+							
+              
+							<stringProp name="HTTPSampler.port"/>
+							
+              
+							<stringProp name="HTTPSampler.protocol"/>
+							
+              
+							<stringProp name="HTTPSampler.contentEncoding"/>
+							
+              
+							<stringProp name="HTTPSampler.path">/tools/get_industry_kline</stringProp>
+							
+              
+							<stringProp name="HTTPSampler.method">POST</stringProp>
+							
+              
+							<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+							
+              
+							<stringProp name="HTTPSampler.embedded_url_re"/>
+							
+              
+							<stringProp name="HTTPSampler.connect_timeout"/>
+							
+              
+							<stringProp name="HTTPSampler.response_timeout"/>
+							
+        
+						</HTTPSamplerProxy>
+						<hashTree>
+							
+            
+							<ResponseAssertion enabled="true" guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+								
+                
+								<collectionProp name="Asserion.test_strings">
+									
+                    
+									<stringProp name="976370584">error_no=${error_no_0}</stringProp>
+									
+                
+								</collectionProp>
+								
+                
+								<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+								
+                
+								<boolProp name="Assertion.assume_success">false</boolProp>
+								
+                
+								<intProp name="Assertion.test_type">16</intProp>
+								
+            
+							</ResponseAssertion>
+							
+        
+						</hashTree>
+					</hashTree>
+					<GenericController enabled="true" guiclass="LogicControllerGui" testclass="GenericController" testname="get_industry_stock_list--接口功能测试"/>
+					<hashTree>
+						<HTTPSamplerProxy enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_industry_stock_list_行业股票列表">
+							
+              
+							<boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+							
+              
+							<elementProp elementType="Arguments" name="HTTPsampler.Arguments">
+								
+                
+								<collectionProp name="Arguments.arguments">
+									
+                  
+									<elementProp elementType="HTTPArgument" name="">
+										
+                    
+										<boolProp name="HTTPArgument.always_encode">false</boolProp>
+										
+                    
+										<stringProp name="Argument.value">{user_token=${user_token},date=${date},code=${code}}</stringProp>
+										
+                    
+										<stringProp name="Argument.metadata">=</stringProp>
+										
+                  
+									</elementProp>
+									
+                
+								</collectionProp>
+								
+              
+							</elementProp>
+							
+              
+							<stringProp name="HTTPSampler.domain"/>
+							
+              
+							<stringProp name="HTTPSampler.port"/>
+							
+              
+							<stringProp name="HTTPSampler.protocol"/>
+							
+              
+							<stringProp name="HTTPSampler.contentEncoding"/>
+							
+              
+							<stringProp name="HTTPSampler.path">/tools/get_industry_stock_list</stringProp>
+							
+              
+							<stringProp name="HTTPSampler.method">POST</stringProp>
+							
+              
+							<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+							
+              
+							<stringProp name="HTTPSampler.embedded_url_re"/>
+							
+              
+							<stringProp name="HTTPSampler.connect_timeout"/>
+							
+              
+							<stringProp name="HTTPSampler.response_timeout"/>
+							
+        
+						</HTTPSamplerProxy>
+						<hashTree>
+							
+            
+							<ResponseAssertion enabled="true" guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+								
+                
+								<collectionProp name="Asserion.test_strings">
+									
+                    
+									<stringProp name="976370584">error_no=${error_no_0}</stringProp>
+									
+                
+								</collectionProp>
+								
+                
+								<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+								
+                
+								<boolProp name="Assertion.assume_success">false</boolProp>
+								
+                
+								<intProp name="Assertion.test_type">16</intProp>
+								
+            
+							</ResponseAssertion>
+							
+        
+						</hashTree>
+					</hashTree>
+					<GenericController enabled="true" guiclass="LogicControllerGui" testclass="GenericController" testname="get_overheating_industry--接口功能测试"/>
+					<hashTree>
+						<HTTPSamplerProxy enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_overheating_industry_过热行业">
+							
+              
+							<boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+							
+              
+							<elementProp elementType="Arguments" name="HTTPsampler.Arguments">
+								
+                
+								<collectionProp name="Arguments.arguments">
+									
+                  
+									<elementProp elementType="HTTPArgument" name="">
+										
+                    
+										<boolProp name="HTTPArgument.always_encode">false</boolProp>
+										
+                    
+										<stringProp name="Argument.value">{user_token=${user_token},date=${date}}</stringProp>
+										
+                    
+										<stringProp name="Argument.metadata">=</stringProp>
+										
+                  
+									</elementProp>
+									
+                
+								</collectionProp>
+								
+              
+							</elementProp>
+							
+              
+							<stringProp name="HTTPSampler.domain"/>
+							
+              
+							<stringProp name="HTTPSampler.port"/>
+							
+              
+							<stringProp name="HTTPSampler.protocol"/>
+							
+              
+							<stringProp name="HTTPSampler.contentEncoding"/>
+							
+              
+							<stringProp name="HTTPSampler.path">/tools/get_overheating_industry</stringProp>
+							
+              
+							<stringProp name="HTTPSampler.method">POST</stringProp>
+							
+              
+							<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+							
+              
+							<stringProp name="HTTPSampler.embedded_url_re"/>
+							
+              
+							<stringProp name="HTTPSampler.connect_timeout"/>
+							
+              
+							<stringProp name="HTTPSampler.response_timeout"/>
+							
+        
+						</HTTPSamplerProxy>
+						<hashTree>
+							
+            
+							<ResponseAssertion enabled="true" guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+								
+                
+								<collectionProp name="Asserion.test_strings">
+									
+                    
+									<stringProp name="976370584">error_no=${error_no_0}</stringProp>
+									
+                
+								</collectionProp>
+								
+                
+								<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+								
+                
+								<boolProp name="Assertion.assume_success">false</boolProp>
+								
+                
+								<intProp name="Assertion.test_type">16</intProp>
+								
+            
+							</ResponseAssertion>
+							
+        
+						</hashTree>
+					</hashTree>
+					<GenericController enabled="true" guiclass="LogicControllerGui" testclass="GenericController" testname="get_undercooling_industry--接口功能测试"/>
+					<hashTree>
+						<HTTPSamplerProxy enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_undercooling_industry_过冷行业">
+							
+              
+							<boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+							
+              
+							<elementProp elementType="Arguments" name="HTTPsampler.Arguments">
+								
+                
+								<collectionProp name="Arguments.arguments">
+									
+                  
+									<elementProp elementType="HTTPArgument" name="">
+										
+                    
+										<boolProp name="HTTPArgument.always_encode">false</boolProp>
+										
+                    
+										<stringProp name="Argument.value">{user_token=${user_token},date=${date}}</stringProp>
+										
+                    
+										<stringProp name="Argument.metadata">=</stringProp>
+										
+                  
+									</elementProp>
+									
+                
+								</collectionProp>
+								
+              
+							</elementProp>
+							
+              
+							<stringProp name="HTTPSampler.domain"/>
+							
+              
+							<stringProp name="HTTPSampler.port"/>
+							
+              
+							<stringProp name="HTTPSampler.protocol"/>
+							
+              
+							<stringProp name="HTTPSampler.contentEncoding"/>
+							
+              
+							<stringProp name="HTTPSampler.path">/tools/get_undercooling_industry</stringProp>
+							
+              
+							<stringProp name="HTTPSampler.method">POST</stringProp>
+							
+              
+							<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+							
+              
+							<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+							
+              
+							<stringProp name="HTTPSampler.embedded_url_re"/>
+							
+              
+							<stringProp name="HTTPSampler.connect_timeout"/>
+							
+              
+							<stringProp name="HTTPSampler.response_timeout"/>
+							
+        
+						</HTTPSamplerProxy>
+						<hashTree>
+							
+            
+							<ResponseAssertion enabled="true" guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+								
+                
+								<collectionProp name="Asserion.test_strings">
+									
+                    
+									<stringProp name="976370584">error_no=${error_no_0}</stringProp>
+									
+                
+								</collectionProp>
+								
+                
+								<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+								
+                
+								<boolProp name="Assertion.assume_success">false</boolProp>
+								
+                
+								<intProp name="Assertion.test_type">16</intProp>
+								
+            
+							</ResponseAssertion>
+							
+        
+						</hashTree>
+					</hashTree>
+				</hashTree>
+				
+      
+			</hashTree>
+			
+    
+		</hashTree>
+		
+    
+		<WorkBench enabled="true" guiclass="WorkBenchGui" testclass="WorkBench" testname="工作台">
+			
+      
+			<boolProp name="WorkBench.save">true</boolProp>
+			
+    
+		</WorkBench>
+		
+    
+		<hashTree/>
+		
+  
+	</hashTree>
+	
+
+</jmeterTestPlan>

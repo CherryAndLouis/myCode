@@ -1,0 +1,5 @@
+{
+    "swagger_url":"http://10.253.102.208:9008/tools/",
+    "jacoco_path":"C:\\Users\\hspcadmin\\Desktop\\ifs-dav_jacoco_HTML_Report",
+    "coverage_level":50
+}
